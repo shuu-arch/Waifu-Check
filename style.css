@@ -1,6 +1,5 @@
-
 body {
-  background: #200035;
+  background: #1c2333;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   display: flex;
@@ -8,15 +7,15 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  text-align: center;
 }
 
 .container {
-  background: #2a2a40;
+  background: #2f3c5c;
   padding: 30px;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
-  text-align: center;
 }
 
 input {
@@ -28,7 +27,7 @@ input {
 }
 
 button {
-  background: #ff13c6;
+  background: #50bfff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -36,6 +35,7 @@ button {
   cursor: pointer;
 }
 
-.popup {
-  margin-top: 20px;
+#waifu-list div {
+  margin-top: 10px;
+  font-size: 1.2em;
 }
