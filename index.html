@@ -1,20 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waifu Match</title>
+  <title>Blue Archive Waifu Picker</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Karbit Loe Kalo Ganti Waifu 😎🥀 </h1>
+    <h1>Lo Karbit Kalo Ganti Waifu 😎🥀</h1>
+    <img id="randomBanner" src="img/7.png" alt="Banner" style="width: 50%; border-radius: 5px; margin-bottom: 10px;" />
+
     <input type="text" id="nama" placeholder="Nama Lo">
-    <input type="number" id="umur" placeholder="Umur (Wajib)">
-    <button onclick="tampilkanWaifu()">Cek Waifu</button>
-    <div id="result" class="popup"></div>
+    <input type="number" id="umur" placeholder="Umur (wajib)">
+    <button onclick="submitForm()">Cek Waifu Lo</button>
   </div>
-  <script src="waifu.js"></script>
+  <script>
+    function submitForm() {
+      const nama = document.getElementById("nama").value.trim();
+      const umur = document.getElementById("umur").value.trim();
+      if (!nama || !umur) {
+        alert("Isi nama & umur dulu ya!");
+        return;
+      }
+      window.location.href = `result.html?nama=${encodeURIComponent(nama)}&umur=${umur}`;
+  const banners = [
+    "img/7.png",
+    "img/4.png",
+    "img/8.png"
+  ];
+
+  const randomIndex = Math.floor(Math.random() * banners.length);
+  document.getElementById("randomBanner").src = banners[randomIndex];
+    }
+  </script>
 </body>
 </html>
