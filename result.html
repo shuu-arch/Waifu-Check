@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Waifu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- BANNER ACak -->
+    <img id="randomBanner" src="" alt="Banner" style="width: 40%; border-radius: 10px; margin-bottom: 20px;" />
+
+    <h1>Waifu Lo:</h1>
+    <p id="result-info"></p>
+    <div id="waifu-list"></div>
+    <a href="index.html"><button>Kembali</button></a>
+  </div>
+
+  <script src="waifu.js"></script>
+  <script>
+    // === Waifu Logic ===
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama") || "Kamu";
+    const umur = params.get("umur") || "??";
+    const resultInfo = document.getElementById("result-info");
+    const waifuList = document.getElementById("waifu-list");
+
+    resultInfo.innerHTML = `<strong>${nama}</strong> || Lo Menurut GW Cocok Sama:`;
+
+    const selected = blueArchiveWaifus.sort(() => Math.random() - 0.3).slice(0, 2);
+    selected.forEach(name => {
+      waifuList.innerHTML += `<div style="margin: 10px;"><strong>${name}</strong></div>`;
+    });
+
+    // === Random Banner Logic ===
+    const banners = [
+      "img/1.png",
+      "img/2.png",
+      "img/3.png",
+      "img/4.png",
+      "img/5.png",
+      "img/6.png",
+      "img/8.png",
+    ];
+    const randomIndex = Math.floor(Math.random() * banners.length);
+    document.getElementById("randomBanner").src = banners[randomIndex];
+  </script>
+</body>
+</html>
